@@ -1,11 +1,10 @@
 @startuml
 
-left to right direction
+usecase "Pagar" as UC1
+usecase "Pagar con tarjeta" as UC2
+usecase "Pagar con transferencia" as UC3
 
-usecase "Acceder" as UC1
-usecase "Registrarse" as UC2
-
-UC1 <.. UC2 : <<extend>>
-
+UC1 <|-- UC2
+UC1 <|-- UC3
 
 @enduml
