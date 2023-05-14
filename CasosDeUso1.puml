@@ -1,14 +1,13 @@
 @startuml
 
-actor "Ciudadano" as c
-actor "Ciudadano extranjero" as ce
+usecase UC1 as "Sacar dinero
+--
++ solicitud hecha"
 
-usecase "Registra entrada" as UC1
-usecase "Tomar huellas" as UC2
+usecase UC2 as "Retener tarjeta"
 
-c -right- UC1
-ce -right- UC2
-UC2 .up.> UC1 : <<extend>>
-c <|-- ce
+UC1 <.. UC2 : <<extend>>
+
+note "Description\n--\ncondición:\n { historia sospechosa}\npunto de extensión:\n solicitud hecha" as N2
 
 @enduml
