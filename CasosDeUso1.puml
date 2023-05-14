@@ -2,15 +2,13 @@
 
 left to right direction
 actor "Cliente" as cl
-actor "Restaurante" as rt
-rectangle {
-  usecase "Mostrar menú" as UC1
-  usecase "Pedir comida" as UC2
-}
-usecase "Entregar comida" as UC3
+
+usecase "Confirmar pedido" as UC1
+usecase "Cancelar pedido" as UC2
+usecase "Devolver pedido" as UC3
 cl -- UC1
 cl -- UC2
-rt -- UC1
-rt -- UC3
+UC1 ..> UC3 : <<include>>
+UC2 ..> UC3 : <<include>>
 
 @enduml
