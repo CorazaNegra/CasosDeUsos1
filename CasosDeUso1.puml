@@ -1,12 +1,19 @@
 @startuml
 
+left to right direction
 actor "Cliente" as cl
-actor "Cliente VIP" as clV
-usecase "Reservar vuelo" as UC1
-usecase "Elegir asientos" as UC2
 
-cl -right- UC1
-clV -right- UC2
-clV -up-|> cl
+usecase "Meter dinero" as UC1
+usecase "Pedir azucar" as UC2
+usecase "Pedir Producto" as UC3
+usecase "Cancelar" as UC4
+usecase "Devolver dinero" as UC5
+
+cl -- UC1
+cl -- UC2
+cl -- UC3
+cl -- UC4
+UC3 ..> UC5 : <<include>>
+UC4 ..> UC5 : <<include>>
 
 @enduml
